@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --page-background: #eff6ff;
+  --page-foreground: #0f172a;
+  --card-background: rgba(255, 255, 255, 0.88);
+  --card-border: rgba(148, 163, 184, 0.35);
+  --font-sans:
+    "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", "SF Mono", monospace;
+}
+
+.dark {
+  --page-background: #0f172a;
+  --page-foreground: #f1f5f9;
+  --card-background: rgba(30, 41, 59, 0.88);
+  --card-border: rgba(148, 163, 184, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(125, 211, 252, 0.25), transparent 36%),
+    linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  color: var(--page-foreground);
+  font-family: var(--font-sans);
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.14), transparent 38%),
+    linear-gradient(180deg, #0f172a 0%, #020617 100%);
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: #bfdbfe;
+  color: #0f172a;
+}
+
+.dark ::selection {
+  background: #334155;
+  color: #f8fafc;
+}
